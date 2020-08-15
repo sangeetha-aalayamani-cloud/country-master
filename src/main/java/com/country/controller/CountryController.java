@@ -99,7 +99,7 @@ public class CountryController {
 			return new ResponseEntity<Void>(HttpStatus.CONFLICT);
 		}
 		HttpHeaders headers = new HttpHeaders();
-		headers.setLocation(builder.path("/article/{id}").buildAndExpand(country.getId()).toUri());
+		headers.setLocation(builder.path("/getCountryById/{id}").buildAndExpand(country.getId()).toUri());
 		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	}
 
