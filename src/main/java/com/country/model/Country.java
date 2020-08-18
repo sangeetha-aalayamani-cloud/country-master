@@ -9,31 +9,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
-
 @Entity
 @Table(name = "country")
-@Getter
-@Setter
 public class Country {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
-	private long id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", unique = true, nullable = false)
+	private Long id;
 	
 	@Column(name="country")
 	private String country;
-	
+
 	@Column(name="population")
 	private BigInteger population;
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id2) {
-		this.id = id2;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getCountry() {
