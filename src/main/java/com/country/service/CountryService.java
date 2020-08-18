@@ -48,12 +48,7 @@ public class CountryService {
 	 * @return
 	 */
 	public boolean addCountry(Country c) {
-		Optional<Country> list = countryRepository.findById(c.getId());
-		if (list.isPresent()) {
-			return false;
-		} else {
-			countryRepository.save(c);
-		}
+		countryRepository.save(c);
 		return true;
 	}
 
